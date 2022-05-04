@@ -6,7 +6,6 @@ const app = new Vue({
   data: {
     toDoList: 
     [
-
       {
         text: 'porta a spasso il cane',
         done: false,
@@ -19,12 +18,26 @@ const app = new Vue({
         text: 'vai al meccanico',
         done: false,
       }
-    ]
+    ],
+    toAdd: 
+    {
+      text: '',
+      done: false
+    }
   },
   methods: {
     deleteToDo(index){
       console.log('*********indice da eliminare*********', index);
-      this.toDoList.splice(index, 1);
+      if(confirm('Sei sicuro di voler eliminare?')){
+        this.toDoList.splice(index, 1);
+      }
+    },
+
+    addToDo(){
+      console.log(this.toAdd.text);
+      if(this.toAdd.text.length > 2){
+        this.toDoList.push(this.toAdd)
+      }
     }
   }
 })

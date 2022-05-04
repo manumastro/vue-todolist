@@ -14,8 +14,8 @@
   <div class="container" id="app">
     
     <div class="input-wrapper">
-      <input type="text" placeholder="Aggiungi qualcosa da fare">
-      <button>Aggiungi</button>
+      <input v-model.trim="toAdd.text" type="text" placeholder="Aggiungi qualcosa da fare">
+      <button @click="addToDo">Aggiungi</button>
     </div>
 
     <div class="todo-list">
