@@ -19,15 +19,17 @@
     </div>
 
     <div class="todo-list">
-      <ul>
-        <li v-for="toDo in toDoList">
+      <ul v-if="toDoList.length > 0">
+        <li v-for="(toDo, index) in toDoList">
           <span
             :class="{'done' : toDo.done === true}"
           >{{toDo.text}}</span>
-          <i class="fa-solid fa-xmark"></i>
+          <i
+            @click="deleteToDo(index)" 
+            class="fa-solid fa-xmark"></i>
         </li>
-        
       </ul>
+      <h1 v-else>Non ci sono cose da fare</h1>
     </div>
     
 

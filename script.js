@@ -20,8 +20,11 @@ const app = new Vue({
         done: false,
       }
     ]
-
-
-
+  },
+  methods: {
+    deleteToDo(index){
+      console.log('*********indice da eliminare*********', index);
+      this.toDoList.splice(index, 1);
+    }
   }
 })
