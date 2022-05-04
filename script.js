@@ -35,9 +35,8 @@ const app = new Vue({
 
     addToDo(){
       console.log(this.toAdd.text);
-      if(this.toAdd.text.length > 2){
-        this.toDoList.push(this.toAdd)
-      }
+      if(this.toAdd.text.length > 2) this.toDoList.push(this.toAdd);
+      this.toAdd = '';
     }
   }
 })

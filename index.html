@@ -14,7 +14,11 @@
   <div class="container" id="app">
     
     <div class="input-wrapper">
-      <input v-model.trim="toAdd.text" type="text" placeholder="Aggiungi qualcosa da fare">
+      <input 
+      v-model.trim="toAdd.text"
+      @keyup.enter="addToDo" 
+      type="text" placeholder="Aggiungi qualcosa da fare">
+
       <button @click="addToDo">Aggiungi</button>
     </div>
 
@@ -23,6 +27,7 @@
         <li v-for="(toDo, index) in toDoList">
           <span
             :class="{'done' : toDo.done === true}"
+            @click="toDo.done = !toDo.done"
           >{{toDo.text}}</span>
           <i
             @click="deleteToDo(index)" 
