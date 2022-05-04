@@ -1,0 +1,64 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(188, 213, 235);
+}
+
+.container{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.input-wrapper{
+  padding: 75px;
+}
+  
+.input-wrapper input{
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.input-wrapper button{
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+}
+
+
+.todo-list ul li{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  border-bottom: 1px solid black;
+  padding: 30px 10px;
+}
+
+.todo-list ul li:hover{
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.todo-list ul li i{
+  color: rgb(94, 96, 97);
+  font-size: 20px;
+}
+
+.todo-list ul li i:hover{
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+
+.done{
+  text-decoration-line: line-through;
+}
