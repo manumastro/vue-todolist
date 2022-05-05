@@ -19,11 +19,7 @@ const app = new Vue({
         done: false,
       }
     ],
-    toAdd: 
-    {
-      text: '',
-      done: false
-    }
+    toAdd: ''
   },
   methods: {
     deleteToDo(index){
@@ -34,9 +30,15 @@ const app = new Vue({
     },
 
     addToDo(){
-      console.log(this.toAdd.text);
-      if(this.toAdd.text.length > 2) this.toDoList.push(this.toAdd);
-      this.toAdd = '';
+      console.log(this.toAdd);
+      if(this.toAdd.length > 2){ 
+        const toAddToPush = {
+          text: this.toAdd,
+          done: false
+        }
+        this.toDoList.push(toAddToPush);
+        this.toAdd = '';
+      }
     }
   }
 })
